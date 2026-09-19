@@ -26,8 +26,9 @@ const projects = [
 
 const tools = ["Figma", "Adobe Photoshop", "Illustrator", "Adobe XD", "After Effects", "Premiere Pro", "InDesign", "VS Code", "Bootstrap"];
 
-/* CHANGE YOUR EMAIL HERE — used for the contact link + each project's mailto link */
-const CONTACT_EMAIL = "your-email@gmail.com";
+/* WhatsApp contact used for the contact link and project enquiries. */
+const WHATSAPP_NUMBER = "917081332685";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 /* ---------- 2. RENDER CONTENT INTO THE PAGE ---------- */
 
@@ -85,7 +86,7 @@ function renderProjects() {
         </div>
         <img src="${project.image}" alt="${project.alt}" loading="lazy" width="1536" height="896" />
       </div>
-      <a href="mailto:${CONTACT_EMAIL}?subject=${subject}" class="project-link" data-magnetic>VIEW CASE STUDY <span>↗</span></a>
+      <a href="${WHATSAPP_URL}?text=${subject}" class="project-link" target="_blank" rel="noopener noreferrer" data-magnetic>ASK ABOUT PROJECT <span>↗</span></a>
     `;
     container.appendChild(card);
   });
@@ -104,7 +105,7 @@ function renderTools() {
 }
 
 function wireContactLinks() {
-  document.getElementById("contact-link").href = `mailto:${CONTACT_EMAIL}`;
+  document.getElementById("contact-link").href = `${WHATSAPP_URL}?text=Hello%20Sahil%2C%20I%20visited%20your%20portfolio.`;
 }
 
 /* ---------- 3. NAV MENU (mobile) ---------- */
